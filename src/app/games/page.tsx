@@ -1,3 +1,10 @@
+import Sidebar from "@/components/layout/sidebar/Sidebar";
+
 export default function GamesPage() {
-  return <h2>Game Store Page</h2>;
+  return (
+    <main className='games-page pt-26 relative'>
+      <Sidebar />
+      <section></section>
+    </main>
+  );
 }

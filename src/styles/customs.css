@@ -1,0 +1,29 @@
+.wrapper {
+  @apply max-w-full w-full md:px-[25px] px-[20px] mx-auto;
+}
+.custom-underline {
+  @apply relative inline-block after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF8C42] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100;
+}
+/* BG Colors */
+.bg-gunmetal {
+  @apply bg-[#0F0F0F];
+}
+.bg-charcoal {
+  @apply bg-[#1A1A1A];
+}
+.bg-burnt-orange {
+  @apply bg-[#FF6B00];
+}
+.bg-light-orange {
+  @apply bg-[#FF8C42];
+}
+/* Text Colors */
+.text-light-gray {
+  @apply text-[#E0E0E0];
+}
+.text-burnt-orange {
+  @apply text-[#FF6B00];
+}
+.text-light-orange {
+  @apply text-[#FF8C42];
+}
