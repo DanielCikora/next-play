@@ -12,3 +12,14 @@ body {
   background-color: #0f0f0f;
   color: #fff;
 }
+.wrapper {
+  max-width: 100%;
+  width: 100%;
+  padding-inline: 25px;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 768px) {
+  .wrapper {
+    padding-inline: 20px;
+  }
+}
