@@ -1,16 +1,4 @@
-export type FetchGamesDataTypes = {
-  id: number;
-  title: string;
-  thumbnail: string;
-  short_description: string;
-  game_url: string;
-  genre: string;
-  platform: string;
-  publisher: string;
-  developer: string;
-  release_date: string;
-  freetogame_profile_url: string;
-};
+import { FetchGamesDataTypes } from "@/types/games";
 export async function fetchGames(): Promise<FetchGamesDataTypes[]> {
   const res = await fetch("/api/games", {
     headers: {
