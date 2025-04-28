@@ -18,6 +18,7 @@ export default function CheckBox({
         id={htmlFor}
         type='radio'
         className='peer hidden'
+        multiple={false}
       />
       <div className='w-6 h-6 rounded-sm border-2 border-orange-500 flex items-center justify-center peer-checked:bg-orange-500 transition-colors' />
       {labelText}
