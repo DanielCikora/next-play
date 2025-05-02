@@ -19,6 +19,7 @@ export default function Card({
             className='w-full h-auto max-w-[400px] rounded-md mb-4'
             src={src}
             alt={alt}
+            loading='lazy'
           />
         </CardItem>
         <CardItem translateZ='20' className='text-left w-full mb-4'>

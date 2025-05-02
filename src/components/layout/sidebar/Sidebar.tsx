@@ -23,14 +23,14 @@ export default function Sidebar() {
   const categories = ["All", ...genreArray];
 
   return (
-    <aside className='sidebar sticky top-0 left-0 left-0 pt-26 h-full w-full max-w-[350px]'>
+    <aside className='sidebar sticky top-0 left-0 pt-26 h-full w-full max-w-[350px]'>
       <div className='sidebar-content px-7 py-6 rounded-lg bg-charcoal'>
         <CategoryTitle titleText='Categories' />
         <ul className='categories'>
           {categories.map((genre, index) => (
             <li key={index}>
               <CheckBox
-                onChange={() => setInput(genre)}
+                onChange={() => setInput(`${genre}`)}
                 value={input}
                 htmlFor={genre}
                 labelText={genre}

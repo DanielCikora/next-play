@@ -1,4 +1,5 @@
 import { ChangeEventHandler, MouseEventHandler } from "react";
+import { FetchGamesDataTypes } from "./games";
 export type NavItemPropsDataType = {
   href: "/" | "/games" | "/about" | "/contact" | "/news";
   linkText: string;
@@ -33,8 +34,5 @@ export type CTAPropsDataTypes = {
   className?: string;
 };
 export type PaginationPropsDataTypes = {
-  totalPosts: number;
-  postsPerPage: number;
-  currentPage: number;
-  setCurrentPage: (currentPage: number) => void;
+  data: FetchGamesDataTypes[] | undefined;
 };
