@@ -1,5 +1,15 @@
 import { create } from "zustand";
-export const useGenreStore = create((set) => ({
-  selectedGenre: "",
-  setGenre: (genre: string) => set({ selectedGenre: genre }),
+import { FiltersStoreDataTypes, SortingStoreDataTypes } from "@/types/store";
+import { SortingOptions } from "@/types/games";
+
+export const useFiltersStore = create<FiltersStoreDataTypes>((set) => ({
+  genre: "All",
+  platform: "All",
+  setGenre: (genre) => set({ genre }),
+  setPlatform: (platform) => set({ platform }),
+}));
+
+export const useSortingStore = create<SortingStoreDataTypes>((set) => ({
+  sortingOption: SortingOptions.TitleAZ,
+  setSortingOption: (sortingOption) => set({ sortingOption }),
 }));

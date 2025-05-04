@@ -3,7 +3,7 @@ import Sidebar from "@/components/layout/sidebar/Sidebar";
 export default function GamesPage() {
   return (
     <main className='games-page'>
-      <div className='wrapper flex justify-between'>
+      <div className='wrapper flex md:flex-row flex-col md:justify-between md:items-start items-center'>
         <Sidebar />
         <Games />
       </div>

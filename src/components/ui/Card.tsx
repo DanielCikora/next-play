@@ -13,7 +13,7 @@ export default function Card({
 }: CardPropsDataTypes) {
   return (
     <CardContainer containerClassName='py-0 items-start justify-start'>
-      <CardBody className='card w-fit grid place-items-center h-full p-4 rounded-lg bg-gray-700'>
+      <CardBody className='card w-fit grid place-items-center h-full p-4 rounded-lg bg-charcoal'>
         <CardItem translateZ='50' className='w-full'>
           <img
             className='w-full h-auto max-w-[400px] rounded-md mb-4'
@@ -23,8 +23,8 @@ export default function Card({
           />
         </CardItem>
         <CardItem translateZ='20' className='text-left w-full mb-4'>
-          <h2 className='text-2xl font-semibold'>{cardTitle}</h2>
-          <h3 className='text-xl'>{genre}</h3>
+          <h2 className='text-2xl font-bold min-h-[70px]'>{cardTitle}</h2>
+          <h3 className='text-xl font-semibold'>{genre}</h3>
           <h4 className='text-lg'>{platformName}</h4>
           <h5 className='text-md'>{publisher}</h5>
         </CardItem>
