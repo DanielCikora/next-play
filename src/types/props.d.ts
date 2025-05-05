@@ -50,4 +50,11 @@ export type SelectPropsDataTypes = {
   options: string[];
   value: string;
   onChange: ChangeEventHandler<HTMLSelectElement>;
+  name: string;
+};
+
+export type SearchPropsDataTypes = {
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  value: string;
+  ariaLabel: string;
 };

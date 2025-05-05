@@ -9,7 +9,10 @@ import { useSortingStore } from "@/store/store";
 import Select from "@/components/ui/Select";
 import { useFilteredSortedGames } from "@/hooks/useFilteredSortedGames";
 import { SortingOptions } from "@/types/games";
+import Search from "@/components/ui/Search";
 export default function Games() {
+  const [search, setSearch] = useState<string>("");
+
   const sortingOption = useSortingStore((state) => state.sortingOption);
   const setSortingOption = useSortingStore((state) => state.setSortingOption);
 
@@ -33,18 +36,33 @@ export default function Games() {
   const endIndex = startIndex + itemsPerPage;
   const currentItems = sortedGames?.slice(startIndex, endIndex);
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    setSearch(event.target.value);
+  };
+
+  const filteredItems = currentItems.filter((game) =>
+    game.title.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <section className='games min-h-dvh pt-26'>
       <div className='wrapper'>
         <div className='mb-6 w-full flex justify-end'>
+          <Search
+            onChange={handleChange}
+            value={search}
+            ariaLabel='Search games'
+          />
           <Select
             onChange={(e) => setSortingOption(e.target.value as SortingOptions)}
             options={Object.values(SortingOptions)}
             value={sortingOption}
+            name='sorting'
           />
         </div>
         <div className='grid place-items-center gap-5 2xl:grid-cols-4 xl:grid-cols-2 grid-cols-1'>
-          {currentItems.map((game) => (
+          {filteredItems.map((game) => (
             <Card
               key={game.id}
               alt={game.title}

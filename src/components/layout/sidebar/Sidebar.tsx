@@ -40,7 +40,7 @@ export default function Sidebar() {
               <RadioButton
                 onChange={() => setGenre(genre)}
                 value={gameGenre}
-                htmlFor={genre}
+                htmlFor={`${genre}-category`}
                 labelText={genre}
                 name='category'
                 checked={gameGenre === genre}
@@ -55,7 +55,7 @@ export default function Sidebar() {
               <RadioButton
                 onChange={() => setPlatform(platform)}
                 value={gamePlatform}
-                htmlFor={platform}
+                htmlFor={`${platform}-platform`}
                 labelText={platform}
                 name='platform'
                 checked={gamePlatform === platform}
