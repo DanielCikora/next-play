@@ -27,3 +27,31 @@
 .text-light-orange {
   @apply text-[#FF8C42];
 }
+/* Media Queries */
+.custom-grid {
+  @apply grid-cols-1;
+}
+
+@media (min-width: 1024px) {
+  .custom-grid {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 1280px) {
+  .custom-grid {
+    @apply grid-cols-3;
+  }
+}
+
+@media (min-width: 1500px) {
+  .custom-grid {
+    @apply grid-cols-4;
+  }
+}
+
+@media (min-width: 1730px) {
+  .custom-grid {
+    @apply grid-cols-5;
+  }
+}

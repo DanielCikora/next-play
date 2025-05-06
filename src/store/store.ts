@@ -10,6 +10,6 @@ export const useFiltersStore = create<FiltersStoreDataTypes>((set) => ({
 }));
 
 export const useSortingStore = create<SortingStoreDataTypes>((set) => ({
-  sortingOption: SortingOptions.TitleAZ,
+  sortingOption: SortingOptions.ReleaseDateNewest,
   setSortingOption: (sortingOption) => set({ sortingOption }),
 }));

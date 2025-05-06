@@ -4,20 +4,17 @@ import Loader from "@/components/ui/Loader";
 import Pagination from "@/components/layout/navigation/Pagination";
 import { fetchGames } from "@/lib/api";
 import { useQuery } from "@tanstack/react-query";
-import { useState } from "react";
 import { useSortingStore } from "@/store/store";
 import Select from "@/components/ui/Select";
 import { useFilteredSortedGames } from "@/hooks/useFilteredSortedGames";
 import { SortingOptions } from "@/types/games";
 import Search from "@/components/ui/Search";
+import { usePagination } from "@/hooks/usePagination";
+import { useSearch } from "@/hooks/useSearch";
 export default function Games() {
-  const [search, setSearch] = useState<string>("");
-
+  const { handleChange, search } = useSearch();
   const sortingOption = useSortingStore((state) => state.sortingOption);
   const setSortingOption = useSortingStore((state) => state.setSortingOption);
-
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage: number = 16;
 
   const { data, isError, isLoading } = useQuery({
     queryKey: ["games"],
@@ -25,30 +22,27 @@ export default function Games() {
   });
 
   const sortedGames = useFilteredSortedGames(data);
+
+  const { currentItems, currentPage, setCurrentPage, totalPages } =
+    usePagination(sortedGames);
+
   if (isLoading) {
     return <p>Loading game...</p>;
   }
 
   if (isError || !data || data.length === 0) return <Loader />;
 
-  const totalPages = Math.ceil(sortedGames.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentItems = sortedGames?.slice(startIndex, endIndex);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
-    setSearch(event.target.value);
-  };
-
-  const filteredItems = currentItems.filter((game) =>
-    game.title.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredItems =
+    search.length > 0
+      ? sortedGames.filter((game) =>
+          game.title.toLowerCase().includes(search.toLowerCase())
+        )
+      : currentItems;
 
   return (
-    <section className='games min-h-dvh pt-26'>
-      <div className='wrapper'>
-        <div className='mb-6 w-full flex justify-end'>
+    <section className='games min-h-dvh pt-26 w-full'>
+      <div className='px-5 w-full'>
+        <div className='mb-6 w-full flex gap-5'>
           <Search
             onChange={handleChange}
             value={search}
@@ -61,7 +55,7 @@ export default function Games() {
             name='sorting'
           />
         </div>
-        <div className='grid place-items-center gap-5 2xl:grid-cols-4 xl:grid-cols-2 grid-cols-1'>
+        <div className='grid place-items-center gap-5 custom-grid'>
           {filteredItems.map((game) => (
             <Card
               key={game.id}
@@ -76,12 +70,14 @@ export default function Games() {
             />
           ))}
         </div>
+      </div>
+      {search.length === 0 && (
         <Pagination
           currentPage={currentPage}
           setCurrentPage={setCurrentPage}
           totalPages={totalPages}
         />
-      </div>
+      )}
     </section>
   );
 }

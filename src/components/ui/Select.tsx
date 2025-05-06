@@ -10,7 +10,7 @@ export default function Select({
       onChange={onChange}
       value={value}
       name={name}
-      className='p-2 border border-solid border-white rounded text-white bg-charcoal'
+      className='p-3 border border-solid border-white rounded text-white bg-charcoal'
     >
       {options.map((option, i) => (
         <option value={option} key={i}>

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className='games-page'>
-      <div className='wrapper flex md:flex-row flex-col md:justify-between md:items-start items-center'>
+      <div className='wrapper flex md:flex-row flex-col md:items-start items-center'>
         <Sidebar />
         <Games />
       </div>
