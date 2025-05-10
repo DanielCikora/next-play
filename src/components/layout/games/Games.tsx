@@ -40,9 +40,9 @@ export default function Games() {
       : currentItems;
 
   return (
-    <section className='games min-h-dvh pt-26 w-full'>
-      <div className='px-5 w-full'>
-        <div className='mb-6 w-full flex gap-5'>
+    <section className='games min-h-dvh md:pt-26 w-full'>
+      <div className='md:px-5 w-full'>
+        <div className='mb-6 w-full flex md:flex-row flex-col gap-5'>
           <Search
             onChange={handleChange}
             value={search}

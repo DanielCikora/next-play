@@ -28,6 +28,11 @@
   @apply text-[#FF8C42];
 }
 /* Media Queries */
+
+.xs {
+  @apply min-w-[400px];
+}
+
 .custom-grid {
   @apply grid-cols-1;
 }

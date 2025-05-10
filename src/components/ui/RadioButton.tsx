@@ -22,7 +22,7 @@ export default function RadioButton({
         multiple={false}
         checked={checked}
       />
-      <div className='w-6 h-6 rounded-sm border-2 border-orange-500 flex items-center justify-center peer-checked:bg-orange-500 transition-colors' />
+      <div className='md:w-6 md:h-6 w-7 h-7 rounded-sm border-2 border-orange-500 flex items-center justify-center peer-checked:bg-orange-500 transition-colors' />
       {labelText}
     </label>
   );
