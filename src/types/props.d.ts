@@ -2,7 +2,7 @@ import { ChangeEventHandler, MouseEventHandler } from "react";
 import { FetchGamesDataTypes } from "./games";
 
 export type NavItemPropsDataType = {
-  href: "/" | "/games" | "/about" | "/contact" | "/news";
+  href: "/" | "/games" | "/about" | "/contact" | "/news" | "/favorites";
   linkText: string;
   onClick?: MouseEvent<HTMLAnchorElement>;
 };
@@ -22,17 +22,7 @@ export type ButtonPropsDataTypes = {
 };
 
 export type CardPropsDataTypes = {
-  src: string;
-  alt: string;
-  cardTitle: string;
-  platformName: string;
-  genre: string;
-  description?: string;
-  gameUrl: string;
-  publisher: string;
-  developer?: string;
-  releaseDate?: string;
-  viewMoreUrl: string;
+  game: FetchGamesDataTypes;
 };
 
 export type CTAPropsDataTypes = {

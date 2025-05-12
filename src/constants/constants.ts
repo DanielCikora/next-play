@@ -4,4 +4,5 @@ export const navigationItems: NavItemPropsDataType[] = [
   { href: "/news", linkText: "News" },
   { href: "/about", linkText: "About" },
   { href: "/contact", linkText: "Contact" },
+  { href: "/favorites", linkText: "Favorites" },
 ];

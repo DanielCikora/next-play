@@ -1,4 +1,4 @@
-import { SortingOptions } from "./games";
+import { FetchGamesDataTypes, SortingOptions } from "./games";
 
 export type FiltersStoreDataTypes = {
   genre: string;
@@ -10,4 +10,11 @@ export type FiltersStoreDataTypes = {
 export type SortingStoreDataTypes = {
   sortingOption: SortingOptions;
   setSortingOption: (sortingOption: SortingOptions) => void;
+};
+
+export type FavoritesStoreDataTypes = {
+  favorites: FetchGamesDataTypes[];
+  addFavorite: (game: FetchGamesDataTypes) => void;
+  removeFavorite: (id: number) => void;
+  isFavorite: (id: number) => boolean;
 };

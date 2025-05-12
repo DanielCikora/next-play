@@ -15,7 +15,6 @@ export default function Games() {
   const { handleChange, search, loadingSearch } = useSearch();
   const sortingOption = useSortingStore((state) => state.sortingOption);
   const setSortingOption = useSortingStore((state) => state.setSortingOption);
-
   const { data, isError, isLoading } = useQuery({
     queryKey: ["games"],
     queryFn: fetchGames,
@@ -62,17 +61,7 @@ export default function Games() {
         ) : (
           <div className='grid place-items-center gap-5 custom-grid'>
             {filteredItems.map((game) => (
-              <Card
-                key={game.id}
-                alt={game.title}
-                src={game.thumbnail}
-                gameUrl={game.game_url}
-                genre={game.genre}
-                publisher={game.publisher}
-                viewMoreUrl={game.freetogame_profile_url}
-                cardTitle={game.title}
-                platformName={game.platform}
-              />
+              <Card game={game} key={game.id} />
             ))}
           </div>
         )}
