@@ -12,7 +12,7 @@ import Search from "@/components/ui/Search";
 import { usePagination } from "@/hooks/usePagination";
 import { useSearch } from "@/hooks/useSearch";
 export default function Games() {
-  const { handleChange, search } = useSearch();
+  const { handleChange, search, loadingSearch } = useSearch();
   const sortingOption = useSortingStore((state) => state.sortingOption);
   const setSortingOption = useSortingStore((state) => state.setSortingOption);
 
@@ -55,21 +55,27 @@ export default function Games() {
             name='sorting'
           />
         </div>
-        <div className='grid place-items-center gap-5 custom-grid'>
-          {filteredItems.map((game) => (
-            <Card
-              key={game.id}
-              alt={game.title}
-              src={game.thumbnail}
-              gameUrl={game.game_url}
-              genre={game.genre}
-              publisher={game.publisher}
-              viewMoreUrl={game.freetogame_profile_url}
-              cardTitle={game.title}
-              platformName={game.platform}
-            />
-          ))}
-        </div>
+        {loadingSearch ? (
+          <h2 className='text-3xl pt-20 font-semibold text-center'>
+            Loading games...
+          </h2>
+        ) : (
+          <div className='grid place-items-center gap-5 custom-grid'>
+            {filteredItems.map((game) => (
+              <Card
+                key={game.id}
+                alt={game.title}
+                src={game.thumbnail}
+                gameUrl={game.game_url}
+                genre={game.genre}
+                publisher={game.publisher}
+                viewMoreUrl={game.freetogame_profile_url}
+                cardTitle={game.title}
+                platformName={game.platform}
+              />
+            ))}
+          </div>
+        )}
       </div>
       {search.length === 0 && (
         <Pagination

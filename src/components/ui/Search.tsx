@@ -7,7 +7,7 @@ export default function Search({
   return (
     <input
       name='search'
-      type='search'
+      type='text'
       placeholder='Search Game...'
       value={value}
       aria-label={ariaLabel}
