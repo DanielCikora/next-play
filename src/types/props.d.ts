@@ -4,6 +4,7 @@ import { FetchGamesDataTypes } from "./games";
 export type NavItemPropsDataType = {
   href: "/" | "/games" | "/about" | "/contact" | "/news";
   linkText: string;
+  onClick?: MouseEvent<HTMLAnchorElement>;
 };
 
 export type CheckBoxPropsDataTypes = {
@@ -57,4 +58,9 @@ export type SearchPropsDataTypes = {
   onChange: ChangeEventHandler<HTMLInputElement>;
   value: string;
   ariaLabel: string;
+};
+
+export type HamburgerButtonPropsDataTypes = {
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  openMenu: boolean;
 };

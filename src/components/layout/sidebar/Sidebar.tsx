@@ -6,10 +6,10 @@ import Loader from "@/components/ui/Loader";
 import { useFiltersStore } from "@/store/store";
 import RadioButton from "@/components/ui/RadioButton";
 import { useEffect, useState } from "react";
-import { useMediaQuery } from "react-responsive";
+import useIsTablet from "@/hooks/useIsTablet";
 export default function Sidebar() {
   const [filtersOpen, setFiltersOpen] = useState<boolean>(true);
-  const isTablet = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useIsTablet();
 
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["games"],
