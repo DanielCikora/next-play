@@ -19,7 +19,7 @@ export default function Card({ game }: CardPropsDataTypes) {
           />
         </CardItem>
         <CardItem translateZ='20' className='text-left w-full'>
-          <span className='flex justify-between w-full min-h-[70px]'>
+          <span className='flex justify-between items-start w-full h-[70px]'>
             <h2 className='text-2xl font-bold'>{game.title}</h2>
             <button
               onClick={() => {
@@ -29,10 +29,13 @@ export default function Card({ game }: CardPropsDataTypes) {
               className='cursor-pointer'
             >
               {isFav ? (
-                <FontAwesomeIcon className='block text-3xl' icon={solidHeart} />
+                <FontAwesomeIcon
+                  className='block text-3xl text-burnt-orange'
+                  icon={solidHeart}
+                />
               ) : (
                 <FontAwesomeIcon
-                  className='block text-3xl'
+                  className='block text-3xl text-burnt-orange'
                   icon={regularHeart}
                 />
               )}

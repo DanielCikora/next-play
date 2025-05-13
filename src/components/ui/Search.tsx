@@ -12,7 +12,7 @@ export default function Search({
       value={value}
       aria-label={ariaLabel}
       autoComplete='off'
-      className='block selection:outline-none focus:ringt-0 outline-none w-full max-w-[700px] bg-charcoal border border-solid border-white p-3 rounded'
+      className='block selection:outline-none focus:ringt-0 outline-none w-full max-w-[800px] bg-charcoal border border-solid border-white p-4 rounded'
       onChange={onChange}
     />
   );

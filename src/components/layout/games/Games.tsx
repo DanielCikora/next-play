@@ -41,7 +41,7 @@ export default function Games() {
   return (
     <section className='games min-h-dvh md:pt-26 w-full'>
       <div className='md:px-5 w-full'>
-        <div className='mb-6 w-full flex md:flex-row flex-col gap-5'>
+        <div className='mb-6 w-full flex md:flex-row flex-col justify-between gap-5'>
           <Search
             onChange={handleChange}
             value={search}
@@ -57,6 +57,10 @@ export default function Games() {
         {loadingSearch ? (
           <h2 className='text-3xl pt-20 font-semibold text-center'>
             Loading games...
+          </h2>
+        ) : filteredItems.length === 0 ? (
+          <h2 className='text-3xl pt-20 font-semibold text-center'>
+            No games found.
           </h2>
         ) : (
           <div className='grid place-items-center gap-5 custom-grid'>
