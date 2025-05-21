@@ -5,7 +5,7 @@ export default function HamburgerButton({
 }: HamburgerButtonPropsDataTypes) {
   return (
     <button
-      className='cursor-pointer md:hidden flex items-end flex-col gap-1.5'
+      className='button cursor-pointer md:hidden flex items-end flex-col gap-1.5'
       type='button'
       onClick={onClick}
     >

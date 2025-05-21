@@ -2,9 +2,19 @@ import { ChangeEventHandler, MouseEventHandler } from "react";
 import { FetchGamesDataTypes } from "./games";
 
 export type NavItemPropsDataType = {
-  href: "/" | "/games" | "/about" | "/contact" | "/news" | "/favorites";
+  href:
+    | "/"
+    | "/games"
+    | "/about"
+    | "/contact"
+    | "/news"
+    | "/favorites"
+    | "/privacy"
+    | "/terms"
+    | "/faq";
   linkText: string;
   onClick?: MouseEvent<HTMLAnchorElement>;
+  showIn?: Array<"header" | "footer">;
 };
 
 export type CheckBoxPropsDataTypes = {

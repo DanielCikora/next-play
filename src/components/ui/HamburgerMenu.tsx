@@ -1,5 +1,5 @@
 "use client";
-import { navigationItems } from "@/constants/constants";
+import { headerItems } from "@/constants/constants";
 import NavItem from "./NavItem";
 import { useEffect, useState } from "react";
 import HamburgerButton from "./HamburgerButton";
@@ -41,7 +41,7 @@ export default function HamburgerMenu() {
           }
         `}
       >
-        {navigationItems.map(({ href, linkText }) => (
+        {headerItems.map(({ href, linkText }) => (
           <NavItem
             onClick={() => setOpenMenu(false)}
             href={href}
