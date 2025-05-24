@@ -15,6 +15,7 @@ export default function Games() {
   const { handleChange, search, loadingSearch } = useSearch();
   const sortingOption = useSortingStore((state) => state.sortingOption);
   const setSortingOption = useSortingStore((state) => state.setSortingOption);
+
   const { data, isError, isLoading } = useQuery({
     queryKey: ["games"],
     queryFn: fetchGames,
@@ -39,7 +40,7 @@ export default function Games() {
       : currentItems;
 
   return (
-    <section className='games min-h-dvh md:pt-26 w-full'>
+    <section className='games min-h-dvh md:pt-26 pb-6 w-full'>
       <div className='md:px-5 w-full'>
         <div className='mb-6 w-full flex md:flex-row flex-col justify-between gap-5'>
           <Search

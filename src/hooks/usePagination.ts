@@ -7,7 +7,6 @@ export const usePagination = (items: FetchGamesDataTypes[]) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const currentItems = items.slice(startIndex, endIndex);
-
   return {
     currentPage,
     setCurrentPage,

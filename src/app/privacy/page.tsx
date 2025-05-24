@@ -1,16 +1,12 @@
+import { formattedFullDate } from "@/lib/utils/currentDate";
 export default function PrivacyPage() {
-  const formattedDate: string = new Intl.DateTimeFormat("en-GB", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  }).format(new Date());
   return (
-    <main className='privacy-policy py-32'>
+    <main className='privacy-policy py-32 min-h-dvh'>
       <div className='wrapper wrapper--privacy-policy'>
-        <section className='privacy__content max-w-[800px] justify-self-center gap-5 flex flex-col'>
+        <section className='privacy__content sm:text-left text-center max-w-[1000px] justify-self-center gap-5 flex flex-col'>
           <h2 className='text-3xl font-bold'>Privacy Policy for NextPlay</h2>
           <p className='text-sm text-muted-foreground'>
-            Last updated: {formattedDate}
+            Last updated: {formattedFullDate}
           </p>
           <p>
             Welcome to <strong>NextPlay</strong> - a personal game store project

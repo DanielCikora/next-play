@@ -7,7 +7,6 @@ const navigationItems: NavItemPropsDataType[] = [
   { href: "/contact", linkText: "Contact", showIn: ["header", "footer"] },
   { href: "/favorites", linkText: "Favorites", showIn: ["header"] },
   { href: "/privacy", linkText: "Privacy Policy", showIn: ["footer"] },
-  { href: "/terms", linkText: "Terms of Service", showIn: ["footer"] },
 ];
 
 export const headerItems = navigationItems.filter((item) =>

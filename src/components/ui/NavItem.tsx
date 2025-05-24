@@ -8,7 +8,7 @@ export default function NavItem({
   return (
     <li>
       <Link
-        className='custom-underline block md:text-xl text-2xl font-semibold text-burnt-orange'
+        className='custom-underline block text-xl md:font-semibold font-normal text-burnt-orange'
         href={href}
         onClick={onClick}
       >

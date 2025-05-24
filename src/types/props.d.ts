@@ -9,9 +9,7 @@ export type NavItemPropsDataType = {
     | "/contact"
     | "/news"
     | "/favorites"
-    | "/privacy"
-    | "/terms"
-    | "/faq";
+    | "/privacy";
   linkText: string;
   onClick?: MouseEvent<HTMLAnchorElement>;
   showIn?: Array<"header" | "footer">;
