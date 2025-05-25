@@ -26,7 +26,8 @@ export default function Card({ game }: CardPropsDataTypes) {
                 isFav ? removeFavorite(game.id) : addFavorite(game);
               }}
               type='button'
-              className='cursor-pointer'
+              className='button__fav cursor-pointer'
+              aria-label='Add or Remove from Favorites'
             >
               {isFav ? (
                 <FontAwesomeIcon

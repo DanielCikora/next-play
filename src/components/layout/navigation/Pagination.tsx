@@ -12,8 +12,9 @@ export default function Pagination({
         return (
           <button
             key={page}
+            type='button'
             onClick={() => setCurrentPage(page)}
-            className={`cursor-pointer w-10 h-10 rounded border ${
+            className={`button cursor-pointer w-10 h-10 rounded border ${
               currentPage === page ? "bg-burnt-orange font-bold" : "bg-charcoal"
             }`}
           >

@@ -51,8 +51,9 @@ export default function Sidebar() {
   return (
     <aside className='sidebar md:sticky static top-0 left-0 pt-26 w-full md:max-w-[350px] max-w-full mb-5'>
       <button
+        type='button'
         onClick={toggleFiltersOpen}
-        className='cursor-pointer text-white px-3 py-4 md:hidden bg-[#1A1A1A] block border border-solid hover:bg-white hover:text-[#1A1A1A] transition-all duration-300 ease-in-out border-white rounded text-center w-full font-semibold'
+        className='button cursor-pointer text-white px-3 py-4 md:hidden bg-[#1A1A1A] block border border-solid hover:bg-white hover:text-[#1A1A1A] transition-all duration-300 ease-in-out border-white rounded text-center w-full font-semibold'
       >
         Filters
       </button>
