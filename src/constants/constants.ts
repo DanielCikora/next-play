@@ -43,3 +43,15 @@ export const contactLinks: ContactLinkType[] = [
     label: "@_dissimulated_",
   },
 ];
+
+export const aboutTechStack = [
+  { label: "Next.js", note: "(App Router)" },
+  { label: "Tailwind CSS", note: "(Dark mode first)" },
+  { label: "TypeScript", note: "(Fully typed)" },
+  { label: "FontAwesome", note: "icons" },
+  {
+    label: "FreeToGame API",
+    link: "https://www.freetogame.com/api-doc",
+    note: "(used for fetching free game data)",
+  },
+];
